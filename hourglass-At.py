@@ -1,23 +1,26 @@
-import math
-x = int(input("enter your num:"))
+x = int(input("Enter your num:"))
 y = []
 
 while x % 2 == 0:
-    x = int(input("plz enter an odd number: "))
+    x = int(input("Please enter an odd number: "))
 
 num_of_rows = int((x+1)/2)
 
+# Construct the top half of the hourglass
 for i in range (num_of_rows):
-    print(" "*i,end="")
-    y.append(list((x - (i*2)) * "*"))
+    line = " " * i + (x - (i * 2)) * "*"
+    y.append(line)
+    print(line)
+    
+# Construct the bottom half of the hourglass
+for i in range(num_of_rows - 2, -1, -1):
+    line = " " * i + (x - (i * 2)) * "*"
+    y.append(line)
+    print(line)
     
     #the equation the hourglass asterisks
     # x * "*" - (i * 2) * "*"
     # (x - (i*2)) * "*"
-
-for i in range (num_of_rows-2, -1, -1):
-    print(" "*i,end="")
-    y.append(list((x - (i*2)) * "*"))
     
 for i in (y):
     for j in (y):
