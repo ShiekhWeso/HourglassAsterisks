@@ -22,12 +22,17 @@ for i in range(num_of_rows - 2, -1, -1):
     # x * "*" - (i * 2) * "*"
     # (x - (i*2)) * "*"
     
-for i in (y):
-    for j in (y):
-        # at = i % 2 == 0
-        if y[j] % 2 == 0:
-            y[j] = '@'
-        print(y[j],end="")
-    print("")   
+# Modify the asterisks
+for i in range(len(y)):
+    line_list = list(y[i])  # Convert the string to a list
+    for j in range(len(line_list)):
+        at = (j + i) % 2 == 1
+        if line_list[j] == '*':
+            if at:
+                line_list[j] = '@'
+    y[i] = ''.join(line_list)  # Convert the list back to a string
             
-print(y)
+# Print the result
+print("\nFinal Pattern:")
+for line in y:
+    print(line)
