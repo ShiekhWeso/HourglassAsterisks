@@ -1,4 +1,3 @@
-import math
 x = int(input("enter your num:"))
 lines = []
 
